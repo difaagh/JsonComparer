@@ -1,7 +1,4 @@
 /* tslint:disable:prefer-const */
-interface Obj {
-  [key: string]: any;
-}
 export class JSONComparer {
   public compareJSONArrays(json1: any[], json2: any[]): any[] {
     let ratioList: any[] = [];
@@ -91,7 +88,7 @@ export class JSONComparer {
             jsonObject[key] = this.compareJsonObject(jsonObject1, new Object());
           }
         } else if (Array.isArray(itemRawObject1)) {
-          const jsonArray1 = obj2[key];
+          const jsonArray1 = obj1[key];
           const jsonArray2 = obj2[key];
           try {
             jsonObject[key] = this.compareJSONArrays(jsonArray1, jsonArray2);
